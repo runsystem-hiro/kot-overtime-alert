@@ -72,12 +72,19 @@ SLACK_DM_EMAILS=user1@example.com,user2@example.com
 
 ```cron
 0 9 * * * /usr/bin/python3 /home/pi/kot-overtime-alert/compare_overtime.py >> /home/pi/kot-overtime-alert/log/cron.log 2>&1
+
+# 仮想環境内の場合
+0 9 * * * /home/pi/kot-overtime-alert/.venv/bin/python /home/pi/kot-overtime-alert/compare_overtime.py >> /home/pi/kot-overtime-alert/log/cron.log 2>&1
+
 ```
 
 ### 毎週金曜 21:30 に実行（定期通知用）
 
 ```cron
 30 21 * * 5 /usr/bin/python3 /home/pi/kot-overtime-alert/compare_overtime.py >> /home/pi/kot-overtime-alert/log/cron.log 2>&1
+
+# 仮想環境内の場合
+30 21 * * 5 /home/pi/kot-overtime-alert/.venv/bin/python /home/pi/kot-overtime-alert/compare_overtime.py >> /home/pi/kot-overtime-alert/log/cron.log 2>&1
 ```
 
 ---
